@@ -57,7 +57,7 @@ traj = 0 # traj = 0: circular trajectory, traj = 1: spiral trajectory
 show_ref_traj = True
 N_steps, x, y, z = trajectory_generator(T, Nsim, traj, show_ref_traj)
 ref_traj = np.stack((x,y,z),1)
-params = np.array([0.9, 0.1, 0.1, 0.1])
+params = np.array([0.76, 0.1, 0.1, 0.1])
 # set initial condition for acados integrator
 xcurrent = np.array([0.5, 0.0, 1, 0.0, 0.0, 0.0, 0.0, 0.0])
 simX[0,:] = xcurrent

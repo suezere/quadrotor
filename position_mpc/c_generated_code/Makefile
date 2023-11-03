@@ -1,8 +1,5 @@
 #
-# Copyright 2019 Gianluca Frison, Dimitris Kouzoupis, Robin Verschueren,
-# Andrea Zanelli, Niels van Duijkeren, Jonathan Frey, Tommaso Sartor,
-# Branimir Novoselnik, Rien Quirynen, Rezart Qelibari, Dang Doan,
-# Jonas Koenemann, Yutao Chen, Tobias Schöls, Jonas Schlagenhauf, Moritz Diehl
+# Copyright (c) The acados authors.
 #
 # This file is part of acados.
 #
@@ -73,8 +70,8 @@ OBJ+= $(OCP_OBJ)
 EXTERNAL_DIR=
 EXTERNAL_LIB=
 
-INCLUDE_PATH = /home/rcir/workspace/acados/include
-LIB_PATH = /home/rcir/workspace/acados/lib
+INCLUDE_PATH = /home/rcir/tools/acados/include
+LIB_PATH = /home/rcir/tools/acados/lib
 
 # preprocessor flags for make's implicit rules
 CPPFLAGS+= -I$(INCLUDE_PATH)
@@ -135,7 +132,7 @@ ocp_cython_c: ocp_shared_lib
 	-o acados_ocp_solver_pyx.c \
 	-I $(INCLUDE_PATH)/../interfaces/acados_template/acados_template \
 	$(INCLUDE_PATH)/../interfaces/acados_template/acados_template/acados_ocp_solver_pyx.pyx \
-	-I /home/rcir/workspace/acados/examples/acados_python/quadrotor/position_mpc/c_generated_code \
+	-I /home/rcir/workspace/quadrotor/position_mpc/c_generated_code \
 
 ocp_cython_o: ocp_cython_c
 	$(CC) $(ACADOS_FLAGS) -c -O2 \
@@ -144,8 +141,8 @@ ocp_cython_o: ocp_cython_c
 	-I $(INCLUDE_PATH)/blasfeo/include/ \
 	-I $(INCLUDE_PATH)/hpipm/include/ \
 	-I $(INCLUDE_PATH) \
-	-I /usr/lib/python3/dist-packages/numpy/core/include \
-	-I /usr/include/python3.10 \
+	-I /home/rcir/tools/miniconda/envs/l4c/lib/python3.10/site-packages/numpy/core/include \
+	-I /home/rcir/tools/miniconda/envs/l4c/include/python3.10 \
 	acados_ocp_solver_pyx.c \
 
 ocp_cython: ocp_cython_o
@@ -162,7 +159,7 @@ sim_cython_c: sim_shared_lib
 	-o acados_sim_solver_pyx.c \
 	-I $(INCLUDE_PATH)/../interfaces/acados_template/acados_template \
 	$(INCLUDE_PATH)/../interfaces/acados_template/acados_template/acados_sim_solver_pyx.pyx \
-	-I /home/rcir/workspace/acados/examples/acados_python/quadrotor/position_mpc/c_generated_code \
+	-I /home/rcir/workspace/quadrotor/position_mpc/c_generated_code \
 
 sim_cython_o: sim_cython_c
 	$(CC) $(ACADOS_FLAGS) -c -O2 \
@@ -171,8 +168,8 @@ sim_cython_o: sim_cython_c
 	-I $(INCLUDE_PATH)/blasfeo/include/ \
 	-I $(INCLUDE_PATH)/hpipm/include/ \
 	-I $(INCLUDE_PATH) \
-	-I /usr/lib/python3/dist-packages/numpy/core/include \
-	-I /usr/include/python3.10 \
+	-I /home/rcir/tools/miniconda/envs/l4c/lib/python3.10/site-packages/numpy/core/include \
+	-I /home/rcir/tools/miniconda/envs/l4c/include/python3.10 \
 	acados_sim_solver_pyx.c \
 
 sim_cython: sim_cython_o

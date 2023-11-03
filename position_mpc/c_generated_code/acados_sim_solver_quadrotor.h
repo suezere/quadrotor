@@ -1,8 +1,5 @@
 /*
- * Copyright 2019 Gianluca Frison, Dimitris Kouzoupis, Robin Verschueren,
- * Andrea Zanelli, Niels van Duijkeren, Jonathan Frey, Tommaso Sartor,
- * Branimir Novoselnik, Rien Quirynen, Rezart Qelibari, Dang Doan,
- * Jonas Koenemann, Yutao Chen, Tobias Schöls, Jonas Schlagenhauf, Moritz Diehl
+ * Copyright (c) The acados authors.
  *
  * This file is part of acados.
  *
@@ -48,7 +45,7 @@ extern "C" {
 
 
 // ** capsule for solver data **
-typedef struct sim_solver_capsule
+typedef struct quadrotor_sim_solver_capsule
 {
     // acados objects
     sim_in *acados_sim_in;
@@ -78,24 +75,24 @@ typedef struct sim_solver_capsule
     external_function_param_casadi * sim_gnsf_f_lo_jac_x1_x1dot_u_z;
     external_function_param_casadi * sim_gnsf_get_matrices_fun;
 
-} sim_solver_capsule;
+} quadrotor_sim_solver_capsule;
 
 
-ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_create(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_solve(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_free(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_update_params(sim_solver_capsule *capsule, double *value, int np);
+ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_create(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_solve(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_free(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_update_params(quadrotor_sim_solver_capsule *capsule, double *value, int np);
 
-ACADOS_SYMBOL_EXPORT sim_config * quadrotor_acados_get_sim_config(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT sim_in * quadrotor_acados_get_sim_in(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT sim_out * quadrotor_acados_get_sim_out(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT void * quadrotor_acados_get_sim_dims(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT sim_opts * quadrotor_acados_get_sim_opts(sim_solver_capsule *capsule);
-ACADOS_SYMBOL_EXPORT sim_solver * quadrotor_acados_get_sim_solver(sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT sim_config * quadrotor_acados_get_sim_config(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT sim_in * quadrotor_acados_get_sim_in(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT sim_out * quadrotor_acados_get_sim_out(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT void * quadrotor_acados_get_sim_dims(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT sim_opts * quadrotor_acados_get_sim_opts(quadrotor_sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT sim_solver * quadrotor_acados_get_sim_solver(quadrotor_sim_solver_capsule *capsule);
 
 
-ACADOS_SYMBOL_EXPORT sim_solver_capsule * quadrotor_acados_sim_solver_create_capsule(void);
-ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_solver_free_capsule(sim_solver_capsule *capsule);
+ACADOS_SYMBOL_EXPORT quadrotor_sim_solver_capsule * quadrotor_acados_sim_solver_create_capsule(void);
+ACADOS_SYMBOL_EXPORT int quadrotor_acados_sim_solver_free_capsule(quadrotor_sim_solver_capsule *capsule);
 
 #ifdef __cplusplus
 }

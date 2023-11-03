@@ -1,10 +1,10 @@
 {
-    "acados_include_path": "/home/rcir/workspace/acados/include",
-    "acados_lib_path": "/home/rcir/workspace/acados/lib",
-    "code_export_directory": "/home/rcir/workspace/acados/examples/acados_python/quadrotor/position_mpc/c_generated_code",
+    "acados_include_path": "/home/rcir/tools/acados/include",
+    "acados_lib_path": "/home/rcir/tools/acados/lib",
+    "code_export_directory": "/home/rcir/workspace/quadrotor/position_mpc/c_generated_code",
     "cython_include_dirs": [
-        "/usr/lib/python3/dist-packages/numpy/core/include",
-        "/usr/include/python3.10"
+        "/home/rcir/tools/miniconda/envs/l4c/lib/python3.10/site-packages/numpy/core/include",
+        "/home/rcir/tools/miniconda/envs/l4c/include/python3.10"
     ],
     "dims": {
         "np": 4,

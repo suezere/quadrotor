@@ -15,8 +15,8 @@ def drone_model():
     # length = 0.47 / 2  # m
 
     # crazyflie 2.0 parameters
-    m =  0.029 # m=27g
-    J = np.array([1.657171e-05, 1.657171e-05, 2.9261652e-05])
+    m =  0.75 # m=27g
+    J = np.array([0.53, 0.49, 0.98])
     length = 0.046
 
 
@@ -85,7 +85,9 @@ def drone_model():
 
     # input bounds
     
-    model.thrust_max = 0.9 * ((46.3e-3 * g)) # 90 % of max_thrust (max_thrust = 57g in research papers) ----- ( max_thrsut = 46g when tested) 
+    # model.thrust_max = 0.9 * ((46.3e-3 * g)) # 90 % of max_thrust (max_thrust = 57g in research papers) ----- ( max_thrsut = 46g when tested) 
+    # model.thrust_min = 0.1 * model.thrust_max
+    model.thrust_max = 40 # 90 % of max_thrust (max_thrust = 57g in research papers) ----- ( max_thrsut = 46g when tested) 
     model.thrust_min = 0.1 * model.thrust_max
 
     model.torque_max = 1 / 2 * model.thrust_max * length # divided by 2 since we only have 2 propellers in a planar quadrotor

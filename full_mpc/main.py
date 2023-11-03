@@ -34,13 +34,13 @@ noisy_input = False
 traj_with_vel = False
 
 # use a single reference point
-ref_point = True
+ref_point = False
 
 # import trajectory with positions and velocities and inputs
-import_trajectory = False
+import_trajectory = True
 
 # bool to save measurements and inputs as .csv files
-save_data = True
+save_data = False
 
 # load model and acados_solver
 model, acados_solver, acados_integrator = acados_settings(Ts, Tf, N)

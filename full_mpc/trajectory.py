@@ -172,8 +172,8 @@ def readTrajectory(T_hover, N, Ts):
     ref_U = pd.concat([pd.DataFrame(ref_u0), ref_U], ignore_index=True)
     
     # append last reference point 3*N times in order for the MPC controller to work at the last iteration (multiplication by 3 is not necessary for the simulation to work but will improve the results than just multilplying by 1)
-    ref_traj = ref_traj.append( ref_traj.iloc[[-1]*N*3] )
-    ref_U = ref_U.append( ref_U.iloc[[-1]*N*3] )
+    ref_traj = ref_traj._append( ref_traj.iloc[[-1]*N*3] )
+    ref_U = ref_U._append( ref_U.iloc[[-1]*N*3] )
 
     # convert data frames to numpy arrays
     ref_traj = ref_traj[['y', 'z', 'phi', 'vy', 'vz', 'phi_dot']].to_numpy()

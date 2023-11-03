@@ -1,13 +1,14 @@
 {
-    "acados_include_path": "/home/rcir/workspace/acados/include",
-    "acados_lib_path": "/home/rcir/workspace/acados/lib",
-    "code_export_directory": "/home/rcir/workspace/acados/examples/acados_python/quadrotor/position_mpc/c_generated_code",
+    "acados_include_path": "/home/rcir/tools/acados/include",
+    "acados_lib_path": "/home/rcir/tools/acados/lib",
+    "code_export_directory": "/home/rcir/workspace/quadrotor/position_mpc/c_generated_code",
     "constraints": {
         "C": [],
         "C_e": [],
         "D": [],
         "constr_type": "BGH",
         "constr_type_e": "BGH",
+        "has_x0": true,
         "idxbu": [
             0,
             1,
@@ -550,8 +551,8 @@
         "zu_e": []
     },
     "cython_include_dirs": [
-        "/usr/lib/python3/dist-packages/numpy/core/include",
-        "/usr/include/python3.10"
+        "/home/rcir/tools/miniconda/envs/l4c/lib/python3.10/site-packages/numpy/core/include",
+        "/home/rcir/tools/miniconda/envs/l4c/include/python3.10"
     ],
     "dims": {
         "N": 100,
@@ -570,6 +571,7 @@
         "nr": 0,
         "nr_e": 0,
         "ns": 0,
+        "ns_0": 0,
         "ns_e": 0,
         "nsbu": 0,
         "nsbx": 0,
@@ -647,6 +649,9 @@
         "alpha_min": 0.05,
         "alpha_reduction": 0.7,
         "collocation_type": "GAUSS_LEGENDRE",
+        "cost_discretization": "EULER",
+        "custom_templates": [],
+        "custom_update_copy": true,
         "custom_update_filename": "",
         "custom_update_header_filename": "",
         "eps_sufficient_descent": 0.0001,
@@ -1098,5 +1103,6 @@
             0.01,
             0.01
         ]
-    }
+    },
+    "zoro_description": null
 }

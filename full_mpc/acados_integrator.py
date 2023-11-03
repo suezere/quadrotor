@@ -15,6 +15,10 @@ def export_drone_integrator(Ts, model_ac):
     # set model
     sim.model = model_sim
 
+    nx = model_sim.x.size()[0]
+    nu = model_sim.u.size()[0]
+    ny = nx + nu
+    ny_e = nx
 
     # solver options
     sim.solver_options.integrator_type = 'IRK'

@@ -1,10 +1,27 @@
 {
-    "python.autoComplete.extraPaths": [
-        "/home/elie/catkin_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages"
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        100
     ],
+    "ros.distro": "humble",
+    "search.exclude": {
+        "**/build": true,
+        "**/install": true,
+        "**/log": true
+    },
+
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages/"
+    ],
+    "python.envFile": "${workspaceFolder}/.env",
     "python.analysis.extraPaths": [
-        "/home/elie/catkin_ws/devel/lib/python3/dist-packages",
-        "/opt/ros/noetic/lib/python3/dist-packages"
-    ]
+        "/opt/ros/humble/lib/python3.10/site-packages/"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.provider": "black"
 }

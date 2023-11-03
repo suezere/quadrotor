@@ -1,8 +1,5 @@
 /*
- * Copyright 2019 Gianluca Frison, Dimitris Kouzoupis, Robin Verschueren,
- * Andrea Zanelli, Niels van Duijkeren, Jonathan Frey, Tommaso Sartor,
- * Branimir Novoselnik, Rien Quirynen, Rezart Qelibari, Dang Doan,
- * Jonas Koenemann, Yutao Chen, Tobias Schöls, Jonas Schlagenhauf, Moritz Diehl
+ * Copyright (c) The acados authors.
  *
  * This file is part of acados.
  *
@@ -276,7 +273,9 @@ ocp_nlp_dims* quadrotor_acados_create_2_create_and_set_dimensions(quadrotor_solv
     ocp_nlp_dims_set_constraints(nlp_config, nlp_dims, N, "nh", &nh[N]);
     ocp_nlp_dims_set_constraints(nlp_config, nlp_dims, N, "nsh", &nsh[N]);
     ocp_nlp_dims_set_cost(nlp_config, nlp_dims, N, "ny", &ny[N]);
+
     free(intNp1mem);
+
 return nlp_dims;
 }
 
@@ -287,6 +286,7 @@ return nlp_dims;
 void quadrotor_acados_create_3_create_and_set_functions(quadrotor_solver_capsule* capsule)
 {
     const int N = capsule->nlp_solver_plan->N;
+
 
     /************************************************
     *  external functions

@@ -107,7 +107,7 @@ def plotPred(predX,ref_traj):
 def plotSim_pos(t, simX, ref_traj, save=False):
     # figure: container holding the plots (can have multiple plots)
     # axes: actual plots
-    plt.style.use('seaborn')
+    # plt.style.use('seaborn')
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1, sharex=True)
 
     
@@ -143,7 +143,7 @@ def plotSim_pos(t, simX, ref_traj, save=False):
 def plotSim_vel(t, simX, save=False):
     # figure: container holding the plots (can have multiple plots)
     # axes: actual plots
-    plt.style.use('seaborn')
+    # plt.style.use('seaborn')
     fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1, sharex=True)
 
     
@@ -170,7 +170,7 @@ def plotSim_vel(t, simX, save=False):
 
 def plotThrustInput(t,simU,save=False):
     
-    plt.style.use('seaborn')
+    # plt.style.use('seaborn')
     fig, ax1 = plt.subplots()
 
     ax1.step(t,simU[:,0], label='Thrust')

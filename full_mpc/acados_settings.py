@@ -40,34 +40,34 @@ def acados_settings(Ts, Tf, N):
     
     # set cost 
     Q = np.eye(nx)
-    Q[0][0] = 0e1  # weight of px
-    Q[1][1] = 3e1  # weight of py
-    Q[2][2] = 3e1  # weight of pz
-    Q[3][3] = 1e0  # weight of qw
-    Q[4][4] = 1e0  # weight of qx
-    Q[5][5] = 1e0  # weight of qy
-    Q[6][6] = 1e0  # weight of qz
-    Q[7][7] = 0e1  # weight of vx
-    Q[8][8] = 0e1  # weight of vy
-    Q[9][9] = 0e1  # weight of vz
+    Q[0][0] = 100  # weight of px
+    Q[1][1] = 100  # weight of py
+    Q[2][2] = 100  # weight of pz
+    Q[3][3] = 100  # weight of qw
+    Q[4][4] = 100  # weight of qx
+    Q[5][5] = 100  # weight of qy
+    Q[6][6] = 100  # weight of qz
+    Q[7][7] = 10  # weight of vx
+    Q[8][8] = 10  # weight of vy
+    Q[9][9] = 10  # weight of vz
 
     R = np.eye(nu)
     R[0][0] = 1e0  # weight of Thrust
-    R[1][1] = 1e-4 # weight of wx
+    R[1][1] = 1e0 # weight of wx
     R[2][2] = 1e0  # weight of wy
     R[3][3] = 1e0  # weight of wz
 
     Qe = np.eye(nx)
-    Qe[0][0] = 0e1  # terminal weight of px
-    Qe[1][1] = 3e1  # terminal weight of py
-    Qe[2][2] = 3e1  # terminal weight of pz
-    Qe[3][3] = 1e0  # terminal weight of qw
-    Qe[4][4] = 1e0  # terminal weight of qx
-    Qe[5][5] = 1e0  # terminal weight of qy
-    Qe[6][6] = 1e0  # terminal weight of qz
-    Qe[7][7] = 0e1  # terminal weight of vx
-    Qe[8][8] = 0e1  # terminal weight of vy
-    Qe[9][9] = 0e1  # terminal weight of vz
+    Qe[0][0] = 100  # terminal weight of px
+    Qe[1][1] = 100  # terminal weight of py
+    Qe[2][2] = 100  # terminal weight of pz
+    Qe[3][3] = 100  # terminal weight of qw
+    Qe[4][4] = 100  # terminal weight of qx
+    Qe[5][5] = 100  # terminal weight of qy
+    Qe[6][6] = 100  # terminal weight of qz
+    Qe[7][7] = 10  # terminal weight of vx
+    Qe[8][8] = 10  # terminal weight of vy
+    Qe[9][9] = 10  # terminal weight of vz
 
     ocp.cost.cost_type   = "LINEAR_LS"
     ocp.cost.cost_type_e = "LINEAR_LS"
@@ -94,8 +94,8 @@ def acados_settings(Ts, Tf, N):
     ocp.cost.yref_e = x_ref
 
     # set constraints on thrust and angular velocities
-    ocp.constraints.lAcadosSimSolverbu   = np.array([model.thrust_min, -4*np.pi, -4*np.pi, -4*np.pi])
-    ocp.constraints.ubu   = np.array([model.thrust_max,  4*np.pi,  4*np.pi,  4*np.pi])
+    ocp.constraints.lbu   = np.array([model.thrust_min, -np.pi, -np.pi, -np.pi])
+    ocp.constraints.ubu   = np.array([model.thrust_max,  np.pi,  np.pi,  np.pi])
     ocp.constraints.idxbu = np.array([0,1,2,3])
 
     
