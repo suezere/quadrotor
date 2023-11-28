@@ -9,8 +9,8 @@ from trajectory import *
 
 
 # mpc and simulation parameters
-Tf = 1        # prediction horizon
-N = 100      # number of discretization steps
+Tf = 0.2        # prediction horizon
+N = 20      # number of discretization steps
 Ts = Tf / N   # sampling time[s]
 
 T_hover = 2     # hovering time[s]
@@ -31,13 +31,13 @@ noisy_input = False
 # extended_kalman_filter = False
 
 # generate circulare trajectory with velocties
-traj_with_vel = False
+traj_with_vel = True
 
 # use a single reference point
 ref_point = False
 
 # import trajectory with positions and velocities and inputs
-import_trajectory = True
+import_trajectory = False
 
 # bool to save measurements and inputs as .csv files
 save_data = False

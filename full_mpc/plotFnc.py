@@ -235,7 +235,7 @@ def plotSim3D(simX, ref_traj, save=False):
     # y_end = simX[-1][1]
     # z_end = simX[-1][2]
 
-    plt.style.use('seaborn')
+    # plt.style.use('seaborn')
 
     x = simX[:,0]
     y = simX[:,1]
